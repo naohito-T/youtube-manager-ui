@@ -64,8 +64,12 @@ index.vueをcomposition api仕様に変更
 ts環境を強化する
 
 `$ yarn add @nuxt/typescript-runtime`
+NuxtのTS回りのNPMがいくつかに分解されました。
+そのうち、@nuxt/typescript-runtimeはNode環境でTSを処理するためのものです。
+具体的にはnuxt.configやserverMiddlewaresでTSを使いたいときに必要になります。
+ちなみに@nuxt/typescript-runtimeはProduction環境(NODE_ENV=production)でも必要になるので、dependenciesに追加する必要があります。
+(nuxt-ts startで使用するので)
 
-RUNTIME中でもTSを実行させるモジュールインストール
 
 package.jsonのnuxtコマンドをnuxt-tsに変更する。
 
@@ -82,3 +86,34 @@ package.jsonを編集。
 
 dotenv install
 `$ yarn add @nuxtjs/dotenv@^1.4.1`
+
+nuxt buildでTSを扱うためのものが@nuxt/typescript-buildです。
+@nuxt/typescriptは@nuxt/typescript-buildに含まれるようになったので直接の依存は不要になります。
+@nuxt/typescript-buildはnuxt buildなどで使うだけなのでRuntimeとは違い、devDependenciesとして追加します。
+@nuxt/typescriptがRuntimeとに分離されて使いやすくなった感じですね。
+
+`$ yarn add -D @nuxt/typescript-build@^2.1.0 `
+
+---
+
+- sass
+NuxtでSassを使うにはnode-sass、sass-loader2種類のパッケージが必要
+@nuxtjs/style-resourcesは変数を使用したい場合に使う。
+
+`$ yarn add -D node-sass@^6.0.1  sass-loader@10.1.1 @nuxtjs/style-resources@^1.2.0`
+
+nuxt.config.tsに以下を記載する。
+
+```ts
+modules: ['@nuxtjs/style-resources'],
+```
+
+---
+
+- バンドルサイズ確認
+Webpack Bundle Analyzerを利用すると、バンドルサイズを可視化できます。可視化することで「容量の大きいモジュールの把握」「複数ページで共通モジュールを保持してないかの確認」といった分析がしやすくなります。
+
+package.jsonのscriptに以下を追加
+
+```json
+"analyze": "nuxt-ts build --analyze",
