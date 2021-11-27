@@ -14,7 +14,7 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "~/*": [
         "./*"
@@ -23,12 +23,17 @@
         "./*"
       ]
     },
+    "typeRoots": [
+      "./src/@types"
+    ],
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "jest",
     ]
   },
+  "include": ["./**/*.ts"],
   "exclude": [
     "node_modules",
     ".nuxt",
