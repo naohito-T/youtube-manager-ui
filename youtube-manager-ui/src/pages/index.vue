@@ -1,9 +1,17 @@
 <template>
-  <Tutorial/>
+  <Tutorial />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@nuxtjs/composition-api'
+import Tutorial from '@/components/Tutorial.vue'
 
-export default Vue.extend({})
+export default defineComponent({
+  components: {
+    Tutorial,
+  },
+  setup() {
+    return {}
+  },
+})
 </script>

@@ -33,6 +33,7 @@ git initをルートに設定
 nuxt.config.jsをnuxt.config.tsに変更
 srcディレクトリを作成
 srcディレクトリ配下にすべてまとめる
+jest.configをtsに変更
 
 - tsconfig
 tsconfig.jsonのbaseUrlをsrcにする
@@ -40,3 +41,18 @@ typeRootで自作@typesディレクトリを作成しみに行く。
 
 
 ---
+
+composition api Setup
+
+`$ yarn add @nuxtjs/composition-api`
+
+導入後、nuxt.config.tsに以下を追記
+
+```ts
+buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    '@nuxtjs/composition-api/module'
+  ],
+```
+
