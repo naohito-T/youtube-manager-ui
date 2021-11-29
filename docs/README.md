@@ -2,7 +2,6 @@
 
 とりあえずのmemo
 
-
 nuxt project作成履歴
 
 ```sh
@@ -117,3 +116,19 @@ package.jsonのscriptに以下を追加
 
 ```json
 "analyze": "nuxt-ts build --analyze",
+```
+
+---
+
+
+
+
+
+---
+
+- Vuexのデータフロー
+VueComponents→Actions→Mutations→State→VueComponentsとなる。
+
+
+
+
