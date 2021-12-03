@@ -1,8 +1,8 @@
-import { NuxtConfig } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types';
 
-const EXE_ENV = process.env.NODE_ENV ?? 'local'
-const ENV_FILE = `./env/decrypt/.env.${EXE_ENV}`
-require('dotenv').config({ path: ENV_FILE })
+const EXE_ENV = process.env.NODE_ENV ?? 'local';
+const ENV_FILE = `./env/decrypt/.env.${EXE_ENV}`;
+require('dotenv').config({ path: ENV_FILE });
 
 const nuxtConfig: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -20,7 +20,11 @@ const nuxtConfig: NuxtConfig = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  /** 設定されていなかったら基本、envのやつにする。 */
   env: {
+    API_URL: process.env.API_URL ?? 'http://localhost',
+    PORT: process.env.API_PORT ?? ':8080',
+    API_ENDPOINT: process.env.API_ENDPOINT ?? '/api',
     YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY ?? 'none',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -52,6 +56,6 @@ const nuxtConfig: NuxtConfig = {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};
 
-export default nuxtConfig
+export default nuxtConfig;
