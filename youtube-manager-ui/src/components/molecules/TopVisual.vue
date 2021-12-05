@@ -1,20 +1,17 @@
 <template>
-  <main class="main">
-    <TopVisual />
-  </main>
+  <VisualNav />
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import TopVisual from '@/components/molecules/TopVisual.vue';
+import VisualNav from '@/components/atoms/VisualNav.vue';
 
 export default defineComponent({
   components: {
-    TopVisual,
+    VisualNav,
   },
   setup() {
     return {};
   },
 });
 </script>
-
