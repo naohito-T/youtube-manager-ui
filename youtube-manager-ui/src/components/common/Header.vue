@@ -27,6 +27,10 @@ export default defineComponent({
 <style lang="scss">
 /** ここは縦にする。 */
 .header {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
   &-navs {
     &-list {
       &__item {

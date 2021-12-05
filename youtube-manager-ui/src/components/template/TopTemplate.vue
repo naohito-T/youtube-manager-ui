@@ -1,7 +1,5 @@
 <template>
-  <div id="root">
-    <nuxt />
-  </div>
+  <main class="main"></main>
 </template>
 
 <script lang="ts">
@@ -12,7 +10,3 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-#root {
-}
-</style>
