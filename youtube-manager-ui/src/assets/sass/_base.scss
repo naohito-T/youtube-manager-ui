@@ -1,0 +1,12 @@
+@charset 'UTF-8';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: $fontSizeBase;
+  word-spacing: 1px;
+}

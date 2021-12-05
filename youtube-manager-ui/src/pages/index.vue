@@ -1,14 +1,14 @@
 <template>
-  <Tutorial />
+  <TopTemplate />
 </template>
 
 <script lang="ts">
 import { defineComponent, useContext } from '@nuxtjs/composition-api';
-import Tutorial from '@/components/Tutorial.vue';
+import TopTemplate from '@/components/template/TopTemplate.vue';
 
 export default defineComponent({
   components: {
-    Tutorial,
+    TopTemplate,
   },
   setup() {
     const { app } = useContext();

@@ -29,7 +29,7 @@ const nuxtConfig: NuxtConfig = {
     YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY ?? 'none',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/sass/style.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '@/plugins/api' }],
@@ -56,7 +56,10 @@ const nuxtConfig: NuxtConfig = {
   axios: {
     baseURL: process.env.API_URL,
   },
-
+  // scss
+  styleResources: {
+    scss: ['@/assets/sass/_variables.scss'],
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };
