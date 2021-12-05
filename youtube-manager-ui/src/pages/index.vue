@@ -12,7 +12,11 @@ export default defineComponent({
   },
   setup() {
     const { app } = useContext();
-    console.log(app.$api.home);
+    const a = async () => {
+      const a = await app.$api.home.fetchMostPopularVideos();
+      console.log(a);
+    };
+    a();
     return {};
   },
 });

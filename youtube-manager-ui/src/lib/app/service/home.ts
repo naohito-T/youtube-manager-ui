@@ -1,5 +1,5 @@
 import { YoutubeVideo } from '../types/home';
 
-export interface IRquestHomeAPI {
-  fetchMostPopularVideos: () => YoutubeVideo[];
+export interface IRequestHomeAPI {
+  fetchMostPopularVideos: () => Promise<YoutubeVideo[]>;
 }

@@ -1,1 +1,1 @@
-export { IRquestHomeAPI } from './home';
+export { IRequestHomeAPI } from './home';
