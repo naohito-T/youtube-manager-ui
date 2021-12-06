@@ -14,5 +14,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #root {
+  width: 100%;
+  height: 100%;
 }
 </style>

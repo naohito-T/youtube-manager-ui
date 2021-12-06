@@ -1,2 +1,4 @@
 // scss bundle
 @import 'reset';
+/* reset後,baseを読み込む */
+@import 'base';

@@ -58,7 +58,7 @@ const nuxtConfig: NuxtConfig = {
   },
   // scss
   styleResources: {
-    scss: ['@/assets/sass/_variables.scss'],
+    scss: ['@/assets/sass/_variables.scss', '@/assets/sass/_mixin.scss'],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
