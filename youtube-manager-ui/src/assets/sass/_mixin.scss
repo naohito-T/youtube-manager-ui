@@ -1,0 +1,67 @@
+@charset 'UTF-8';
+
+/*
+* mixin
+*/
+
+/* display block element */
+@mixin displayFlex(
+  $align-items: center,
+  $flex-direction: row,
+  $justify-content: center
+) {
+  align-items: $align-items;
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}
+
+/* aspect の比率をあわせる
+* see [https://coliss.com/articles/build-websites/operation/css/useful-layouts-using-modern-css.html]
+* boxの要素(画像でも何でもいい。それに使おう)
+*/
+
+/* Layoutを切り出した。*/
+@mixin topLayout() {
+  .main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    .contents {
+      background-color: yellow;
+      order: 2;
+    }
+
+    .left {
+      background-color: red;
+      order: 1;
+    }
+
+    .right {
+      background-color: orangered;
+      order: 3;
+    }
+  }
+  /** tablet */
+  @media (max-width: 798px) {
+    #root {
+      .main {
+        grid-template-columns: 1fr 2fr;
+
+        .contents {
+          grid-column: 2/ 3;
+          grid-row: 3/ -1;
+        }
+      }
+    }
+  }
+  /** sp */
+  @media (max-width: 400px) {
+    #root {
+      .contents {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

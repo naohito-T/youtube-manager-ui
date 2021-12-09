@@ -1,5 +1,19 @@
 @charset 'UTF-8';
 
+/**
+ダークテーマ用にデザインする場合、背景色と文字色を反転させるだけでいいというわけではありません。
+意外と知られていない注意点があります。
+例えば、ダークテーマの背景では視覚的な振動を抑えるために暗い背景の色の彩度を下げる必要があります。
+シャドウで奥行きを出して要素を前に出すのではなく、要素の背景色にライトを使用して要素を前に出すことをお勧めします。
+なぜなら、暗い背景ではシャドウがそれほど効果的ではないからです。
+*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -9,4 +23,9 @@ body {
 html {
   font-size: $fontSizeBase;
   word-spacing: 1px;
+  color: $fontColor;
+}
+
+body {
+  background-color: $mainColor;
 }

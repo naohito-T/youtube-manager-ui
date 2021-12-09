@@ -1,15 +1,17 @@
 <template>
-  <article class="wrapper">
+  <Modal :has-close-button="true">
     <VisualNav />
-  </article>
+  </Modal>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
+import Modal from '@/components/atoms/Modal.vue';
 import VisualNav from '@/components/atoms/VisualNav.vue';
 
 export default defineComponent({
   components: {
+    Modal,
     VisualNav,
   },
   setup() {
@@ -17,8 +19,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.wrapper {
-}
-</style>
