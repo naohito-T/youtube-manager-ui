@@ -1,5 +1,7 @@
 <template>
-  <VisualNav />
+  <article class="wrapper">
+    <VisualNav />
+  </article>
 </template>
 
 <script lang="ts">
@@ -15,3 +17,8 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+}
+</style>
