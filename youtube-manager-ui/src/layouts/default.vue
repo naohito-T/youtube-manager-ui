@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div id="root" :class="isTop ? 'top' : ''">
     <Header :en-title="'Youtube API'" :ja-title="'naohito-T'" />
     <nuxt />
     <Footer />
@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, useContext, computed } from '@nuxtjs/composition-api';
 import Header from '@/components/common/Header.vue';
 import Footer from '@/components/common/Footer.vue';
 
@@ -16,7 +16,15 @@ export default defineComponent({
     Header,
     Footer,
   },
-  setup() {},
+  setup() {
+    /** topか判断してbackground-imageを設定する。 */
+    const { route } = useContext();
+    const isTop = computed(() => route.value.path === '/');
+
+    return {
+      isTop,
+    };
+  },
 });
 </script>
 
@@ -39,5 +47,8 @@ export default defineComponent({
   .footer {
     grid-column: 1 / 4;
   }
+}
+
+.top {
 }
 </style>

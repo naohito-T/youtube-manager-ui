@@ -120,6 +120,8 @@ package.jsonのscriptに以下を追加
 
 ---
 
+- env設定
+
 
 
 
