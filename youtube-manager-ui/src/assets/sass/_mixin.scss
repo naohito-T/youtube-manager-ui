@@ -24,23 +24,25 @@
 /* Layoutを切り出した。*/
 @mixin topLayout() {
   .main {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 5fr 1fr;
+    &-top {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 5fr 1fr;
 
-    .contents {
-      background-color: yellow;
-      order: 2;
-    }
+      .contents {
+        background-color: yellow;
+        order: 2;
+      }
 
-    .left {
-      background-color: red;
-      order: 1;
-    }
+      .left {
+        background-color: red;
+        order: 1;
+      }
 
-    .right {
-      background-color: orangered;
-      order: 3;
+      .right {
+        background-color: orangered;
+        order: 3;
+      }
     }
   }
   /** tablet */

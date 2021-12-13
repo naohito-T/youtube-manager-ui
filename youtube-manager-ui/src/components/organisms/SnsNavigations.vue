@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <p>SHARE</p>
-    <ul>
+  <div class="sns">
+    <p class="sns-title">SHARE</p>
+    <ul class="sns-title">
       <li>
         <a href=""><MdiIcon :mdi="mdiGithub" /></a>
       </li>
@@ -33,3 +33,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.sns {
+
+}
+</style>

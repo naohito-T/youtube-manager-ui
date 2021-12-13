@@ -1,0 +1,44 @@
+// Smaller smart-phone portrait
+$screen-xs-max: 320px;
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 640px;
+// Tablets and small desctop
+$screen-lg-min: 1280px;
+// Large tablets and desktop
+$screen-xl-min: 1920px;
+
+// Smaller smart-phone portrait
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+    // contentでinclude側から値を渡せる
+    @content;
+  }
+}
+
+// Smart-phone portrait and Smart-phone landscape and tablet
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-sm-min + 1px}) {
+    @content;
+  }
+}
+
+//
+@mixin lg {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
